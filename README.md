@@ -6,7 +6,7 @@
 * [Requerimientos y herramientas](#requerimientos-y-herramientas)
 * [Como instalar](#como-instalar)
 * [Usar](#usar)
-* [License](#licencia)
+* [Licencia](#licencia)
 
 ## Acerca de este proyecto
 
