@@ -36,7 +36,7 @@
 		<div class="col-md-8">
 				<ul class="pagination mt-3 float-right">
 					<li class="page-item" v-show="mensajes['prev_page_url']">
-							<a href="#" class="page-link" @click.prevent="getPreviousPage">
+							<a href="#" class="page-link" @click.prevent="obtenerPaginaAnterior">
 									<span>
 										<span aria-hidden="true">«</span>
 									</span>
@@ -44,7 +44,7 @@
 					</li>
 					<template v-for="link in mensajes['links']">
 						<li class="page-item" v-if="link.label != '&laquo; Previous' && link.label != 'Next &raquo;' && link.label != '...'" :class="{ 'active': link.active }" :key="link.label">
-								<a href="#" class="page-link" @click.prevent="getPage(link.label)">
+								<a href="#" class="page-link" @click.prevent="obtenerPagina(link.label)">
 										<span >
 												{{ link.label }}
 										</span>
@@ -52,7 +52,7 @@
 						</li>
 					</template>
 					<li class="page-item" v-show="mensajes['next_page_url']">
-							<a href="#" class="page-link" @click.prevent="getNextPage">
+							<a href="#" class="page-link" @click.prevent="obtenerPaginaSiguiente">
 									<span>
 										<span aria-hidden="true">»</span>
 									</span>
@@ -74,29 +74,36 @@
 			};
 		},
 		methods: {
-			getMensajesList() {
+			/**
+			 * Obtiene el listado de mensajes que ha recibido el server
+			 */
+			listadoMensajes() {
 				axios.get('/mensajes').then( response => {
 					this.mensajes = response.data
 				});
 			},
-			getPage(page) {
+
+			/**
+			 * Funciones para obtener datos acorde a la página seleccionada
+			 */
+			obtenerPagina(page) {
 				axios.get('mensajes?page=' + page).then( response => {
 					this.mensajes = response.data
 				});
 			},
-			getPreviousPage() {
+			obtenerPaginaAnterior() {
 				axios({ baseURL : this.contactos['prev_page_url'] }).then( response => {
 					this.mensajes = response.data
 				});
 			},
-			getNextPage() {
+			obtenerPaginaSiguiente() {
 				axios({ baseURL : this.contactos['next_page_url'] }).then( response => {
 					this.mensajes = response.data
 				});
 			}
 		},
 		mounted() {
-			this.getMensajesList();
+			this.listadoMensajes();
 		},
 	}
 </script>
