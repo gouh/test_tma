@@ -48,6 +48,11 @@ $ npm run dev
 $ npm run watch
 ```
 
+* Para poder generar algunos datos de prueba
+```
+php artisan migrate:refresh --seed
+```
+
 ## Licencia
 
 [MIT](LICENSE).
