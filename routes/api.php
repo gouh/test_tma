@@ -17,4 +17,5 @@ use App\Http\Controllers\MensajeController;
 
 Route::get('mensajes', [MensajeController::class, 'index']);
 Route::get('mensaje/{id}', [MensajeController::class, 'mostrarMensaje']);
+Route::post('mensaje', [MensajeController::class, 'guardarMensaje']);
 // Route::post('mensaje');
