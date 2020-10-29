@@ -31,7 +31,7 @@
 							<div class="col-md-12 mt-3">
 								<div class="md-form">
 									<label for="mensaje"><strong>Mensaje: </strong></label> <br>
-									{{ mensaje.mensaje }}
+									<nl2br tag="p" :text="mensaje.mensaje||''" />
 								</div>
 							</div>
 							<div class="col-sm-12 mt-5">
@@ -47,14 +47,21 @@
 </template>
 
 <script>
+	import Nl2br from 'vue-nl2br'
 	export default {
 		title: 'Mensaje',
+		components: {
+			Nl2br
+		},
 		data(){
 			return {
 				mensaje: {}
 			};
 		},
 		methods: {
+			/**
+			 * Obtiene un mensaje en especifico basandose en su id
+			 */
 			getMensaje(idMensaje){
 				axios.get('/mensaje/' + idMensaje).then( response => {
 					this.mensaje = response.data
@@ -62,6 +69,7 @@
 			}
 		},
 		mounted() {
+			// Obtiene el id del mensaje en cuanto a la url
 			this.getMensaje(this.$route.params.id);
 		}
 	}
