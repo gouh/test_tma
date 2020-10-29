@@ -34,7 +34,7 @@ $ npm i
 ### Cabe resaltar que todo debe ser sobre la raiz del proyecto
 * Para correr el proyecto (Backend)
 ```
-$ php artisan serve
+$ php artisan serve --port=8000
 ```
 
 * Para poder correr el proyecto (Frontend) en modo desarrollo se recomienda
@@ -52,6 +52,13 @@ $ npm run watch
 ```
 php artisan migrate:refresh --seed
 ```
+
+* Es probable que si corre el proyecto en un virtualhost de apache tenga que cambiar la url base de Axios, esta se encuentra en el archivo resources\js\app.js (se recomienda correr el proyecto en localhost en el puerto 8000).
+
+```
+axios.defaults.baseURL = 'http://127.0.0.1:8000/api/';
+```
+* Se incluyo un dump de base de datos el cual esta en "contato_tma.sql"
 
 ## Licencia
 
