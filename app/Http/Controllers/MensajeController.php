@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Mensaje;
 
 class MensajeController extends Controller {
@@ -12,7 +11,7 @@ class MensajeController extends Controller {
 	 * @return array
 	 */
 	public function index() {
-		return Mensage::orderBy('id', 'DESC')->paginate();
+		return Mensaje::orderBy('id', 'DESC')->paginate(5);
 	}
 
 	/**

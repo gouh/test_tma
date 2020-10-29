@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ContactoController;
+use App\Http\Controllers\MensajeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +15,6 @@ use App\Http\Controllers\ContactoController;
 |
 */
 
-Route::get('mensajes', 'MensajeController@index');
-Route::get('mensaje/{id}', 'MensajeController@mostrarMensaje');
-Route::post('mensaje');
+Route::get('mensajes', [MensajeController::class, 'index']);
+Route::get('mensaje/{id}', [MensajeController::class, 'mostrarMensaje']);
+// Route::post('mensaje');
