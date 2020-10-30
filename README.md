@@ -6,6 +6,7 @@
 * [Requerimientos y herramientas](#requerimientos-y-herramientas)
 * [Como instalar](#como-instalar)
 * [Usar](#usar)
+* [Demo](#demo)
 * [Licencia](#licencia)
 
 ## Acerca de este proyecto
@@ -59,6 +60,15 @@ php artisan migrate:refresh --seed
 axios.defaults.baseURL = 'http://127.0.0.1:8000/api/';
 ```
 * Se incluyo un dump de base de datos el cual esta en "contato_tma.sql"
+
+
+## Demo
+
+* Validación de formulario y notificación de "envío"
+![Validación formulario y notificacón](public/gif/validacion_envio_formulario.gif)
+
+* SPA vue-router, paginación y visualización de un mensaje
+![Validación formulario y notificacón](public/gif/router_paginación_lectura.gif)
 
 ## Licencia
 
