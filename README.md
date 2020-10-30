@@ -2,16 +2,11 @@
 
 ## Tabla de contenido
 
-* [Acerca de](#acerca-de-este-proyecto)
 * [Requerimientos y herramientas](#requerimientos-y-herramientas)
 * [Como instalar](#como-instalar)
 * [Usar](#usar)
 * [Demo](#demo)
 * [Licencia](#licencia)
-
-## Acerca de este proyecto
-
-Lorem ipsum dolor sit amet
 
 ## Requerimientos y herramientas
 
@@ -32,7 +27,7 @@ $ npm i
 ```
 
 ## Usar
-### Cabe resaltar que todo debe ser sobre la raiz del proyecto
+#### Cabe resaltar que todo debe ser sobre la raiz del proyecto
 * Para correr el proyecto (Backend)
 ```
 $ php artisan serve --port=8000
@@ -59,16 +54,17 @@ php artisan migrate:refresh --seed
 ```
 axios.defaults.baseURL = 'http://127.0.0.1:8000/api/';
 ```
-* Se incluyo un dump de base de datos el cual esta en "contato_tma.sql"
+* Se incluyo un dump de base de datos el cual esta en **"contato_tma.sql"**
 
 
 ## Demo
 
 * Validación de formulario y notificación de "envío"
-![Validación formulario y notificacón](public/gif/validacion_envio_formulario.gif)
+![Validación formulario y notificación](public/gif/validacion_envio_formulario.gif)
+
 
 * SPA vue-router, paginación y visualización de un mensaje
-![Validación formulario y notificacón](public/gif/router_paginación_lectura.gif)
+![SPA](public/gif/router_paginación_lectura.gif)
 
 ## Licencia
 
