@@ -11,7 +11,7 @@ class MensajeSeeder extends Seeder {
 	 * @return void
 	 */
 	public function run() {
-		App\Models\Mensaje::factory()
+		\App\Models\Mensaje::factory()
 			->times(50)
 			->create();
 	}
